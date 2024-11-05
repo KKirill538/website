@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method='POST'>
+        <div class="form">
+            <label for="email">Email Address</label>
+            <input
+                placeholder="Enter email:"
+                class="form"
+                type="emailtype"
+                id="emailid"
+                name="emailname"
+                value='{{email if email}}'/>
+            <label for="name">Name</label>
+            <input
+                placeholder="Enter name:"
+                class="form"
+                type="nametype"
+                id="nameid"
+                name="namename"
+                value='{{name if name}}'/>
+            <input
+                placeholder="Enter password:"
+                class="form"
+                type="passwordtype"
+                id="passwordid"
+                name="passwordname"
+                value='{{password if password}}'/>
+            <button type='submit'>reg</button>
+        </div>
+    </form>
+</body>
+</html>
