@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="content">
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset>
-                <legend>join today</legend>
-                <div>
-                    {{ form.username.label() }}
-                    {{ form.username }}
-                </div>
-                <div>
-                    {{ form.email.label() }}
-                    {{ form.email }}
-                </div>
-                <div class="">
-                    {{ form.password.label() }}
-                    {{ form.password }}
-                </div>
-            </fieldset>
-            <div class="submit">{{ form.submit() }}</div>
+{% extends 'index.html' %}
+{% block content %}
+    <h1>registerpage</h1>
 
-        </form>
-    </div>
-</body>
-</html>
+
+    <form method="POST" action="">
+        <fieldset>
+            {{form.hidden_tag()}}
+            {{form.username.label}}
+            {{form.username}}
+            {{form.email.label}}
+            {{form.email}}
+            {% if form.email.errors%}
+                {{form.email}}
+                {%for error in form.email.errors %}
+                    <h3>{{error}}</h3>
+                {%endfor%}
+            {% endif %}
+            {{form.password.label}}
+            {{form.password}}
+            {{form.confirm_password.label}}
+            {{form.confirm_password}}
+            {{form.submit}}
+        </fieldset>
+
+    </form>
+{% endblock content %}
